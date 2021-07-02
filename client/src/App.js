@@ -46,7 +46,7 @@ function App() {
        <Route path="/danhsachchat" component={Listchat} />
        <Route path="/trangchu" component={Trangchu} />
        <Route path="/giohang" component={Giohang} />
-       
+       <Route path="/" component={NotFound} />
        <Route path="/ShowSanPham/:id" component={ShowSP} />
        <Route path="/danhsachdonhang" component={Listdonhang} />
      </Switch>
