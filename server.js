@@ -1,10 +1,10 @@
 const express = require('express');
-
+require('dotenv').config()
 const cors = require('cors');
 const path = require("path");
 var cookies = require("cookie-parser");
 var app = express();
-require('dotenv').config()
+
 const mongoose = require('mongoose');
 
 const Comments = require('./models/commentModel')
@@ -65,6 +65,11 @@ io.on('connection', client => {
 
 app.use("/images", express.static(path.join(__dirname, "public/images")));
  
+app.use("/api", require('./router/Hang'))
+
+app.use("/api", require('./router/Sanpham'))
+
+app.use("/api", require('./router/User'))
 
 app.use("/api/conversations", require('./router/iduserchatuser'))
 
