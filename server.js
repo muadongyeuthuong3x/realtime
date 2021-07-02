@@ -63,6 +63,6 @@ if(process.env.NODE_ENV === 'production'){
       res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
   })
 }
-const port = Process.env.PORT || 8000
+const port = process.env.PORT || 8000
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
