@@ -1,0 +1,17 @@
+.comment{
+    cursor: pointer;
+    color:#0062cc;
+}
+.send {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    cursor: pointer;
+    color: greenyellow;
+}
+.noidungcomment{
+    position: relative;
+}
+.comment{
+    padding-left: 40px;
+}
