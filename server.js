@@ -65,7 +65,4 @@ if(process.env.NODE_ENV === 'production'){
 }
 const port = Process.env.PORT || 8000
 
-app.listen(port, function () {
-    console.log('oke ' + app.get('port'));
-  });
-  
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
