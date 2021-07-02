@@ -4,14 +4,25 @@ const cors = require('cors');
 const path = require("path");
 var cookies = require("cookie-parser");
 var app = express();
-require('./database')
 require('dotenv').config()
+const mongoose = require('mongoose');
 
 const Comments = require('./models/commentModel')
 app.use(express.json());
 app.use(cookies());
 app.use(cors());
 app.use(require('morgan')('dev'));
+
+const URI = process.env.URI
+mongoose.connect(URI, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}, err =>{
+    if(err) throw err;
+    console.log('Connected to MongoDB')
+})
 
 
 const io = require('socket.io')(8900, {
