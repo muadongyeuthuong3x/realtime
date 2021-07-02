@@ -52,14 +52,8 @@ io.on('connection', client => {
   client.on('disconnect', () => { /* … */ });
 });
 
-app.set('port', 8000);
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-
-app.use("/api", require('./router/Hang'))
-
-app.use("/api", require('./router/Sanpham'))
-
-app.use("/api", require('./router/User'))
+ 
 
 app.use("/api/conversations", require('./router/iduserchatuser'))
 
@@ -69,9 +63,9 @@ if(process.env.NODE_ENV === 'production'){
       res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
   })
 }
+const port = Process.env.PORT || 8000
 
-
-app.listen(app.get('port'), function () {
+app.listen(port, function () {
     console.log('oke ' + app.get('port'));
   });
   
