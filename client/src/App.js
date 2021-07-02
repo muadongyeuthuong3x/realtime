@@ -35,20 +35,20 @@ function App() {
    <GiohangProvider >  
    <Router>
      <Switch>
-       <Route path="/admin" component={TrangChuAdmin} />
-       <Route path="/themhang" component={ rolequyen===1 ?ThemHang : NotFound } />
-       <Route path="/listhang" component={ rolequyen===1 ? ListHang : NotFound } />
-       <Route path="/themsanpham" component={rolequyen===1 ?Themsanpham : NotFound } />
-       <Route path="/listsanpham" component={rolequyen===1 ?ListSanPham : NotFound } />
-       <Route path="/suasanpham/:id" component={rolequyen===1 ?EditSanPham : NotFound } />
-       <Route path="/dangkitaikhoan" component={Dangki} />
-       <Route path="/dangnhap" component={Dangnhap} />
-       <Route path="/danhsachchat" component={Listchat} />
-       <Route path="/trangchu" component={Trangchu} />
-       <Route path="/giohang" component={Giohang} />
+       <Route path="/admin" exact component={TrangChuAdmin} />
+       <Route path="/themhang"  exact component={ rolequyen===1 ?ThemHang : NotFound } />
+       <Route path="/listhang" exact  component={ rolequyen===1 ? ListHang : NotFound } />
+       <Route path="/themsanpham" exact  component={rolequyen===1 ?Themsanpham : NotFound } />
+       <Route path="/listsanpham" exact component={rolequyen===1 ?ListSanPham : NotFound } />
+       <Route path="/suasanpham/:id" exact component={rolequyen===1 ?EditSanPham : NotFound } />
+       <Route path="/dangkitaikhoan" exact component={Dangki} />
+       <Route path="/dangnhap"  exact component={Dangnhap} />
+       <Route path="/danhsachchat" exact  component={Listchat} />
+       <Route path="/trangchu"  exact component={Trangchu} />
+       <Route path="/giohang" exact component={Giohang} />
        <Route path="/"  exact component={NotFound} />
-       <Route path="/ShowSanPham/:id" component={ShowSP} />
-       <Route path="/danhsachdonhang" component={Listdonhang} />
+       <Route path="/ShowSanPham/:id"  exact component={ShowSP} />
+       <Route path="/danhsachdonhang"  exact component={Listdonhang} />
      </Switch>
    </Router>
    </GiohangProvider >
